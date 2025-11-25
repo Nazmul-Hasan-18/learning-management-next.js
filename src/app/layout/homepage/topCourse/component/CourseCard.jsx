@@ -6,7 +6,8 @@ const CourseCard =  ({selectedId}) => {
     const [data, setData] = useState([])
  useEffect(()=> {
     async function getData() {
-         const res = await fetch('http://localhost:3000/category.json')
+        const baseurl = process.env.NEXTT_URL || ''
+         const res = await fetch(`${baseurl}/category.json`)
          const data = await res.json()
          setData(data)
     }

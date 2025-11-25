@@ -6,7 +6,7 @@ const AllCourse = () => {
     const [data, setData] = useState([])
     useEffect(() => {
         async function getData() {
-            const baseurl = process.env.NEXT_URL  || ''
+            const baseurl = process.env.NEXTT_URL  || ''
             const res = await fetch(`${baseurl}/category.json`)
             const data = await res.json()
             setData(data)

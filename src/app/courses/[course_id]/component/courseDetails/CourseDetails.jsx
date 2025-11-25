@@ -15,7 +15,8 @@ const CourseDetails = () => {
     const [items, setItems] = useState([])
     useEffect(() => {
         async function getData() {
-            const res = await fetch('http://localhost:3000/category.json')
+            const baseurl = process.env.NEXTT_URL  || ''
+            const res = await fetch(`${baseurl}/category.json`)
             const data = await res.json()
             setItems(data)
         }
